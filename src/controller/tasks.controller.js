@@ -58,7 +58,7 @@ export const searchforTask = async (req, res) => {
 
 export const deleteTask = async (req, res) => {
   try {
-    const taskId = req.params.id;
+    const taskId = req.params._id;
     const task = await Task.findByIdAndDelete(taskId);
 
     if (task) {
