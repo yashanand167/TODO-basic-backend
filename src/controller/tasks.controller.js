@@ -56,17 +56,5 @@ export const searchforTask = async (req, res) => {
   }
 };
 
-export const deleteTask = async (req, res) => {
-  try {
-    const taskId = req.params.id;
-    const task = await Task.findByIdAndDelete(taskId);
+//hello world
 
-    if (task) {
-      res.status(404).json({ error: ' Task not deleted. ' });
-    }
-
-    res.status(200).json({ message: ' Task deleted successfully. ' });
-  } catch (error) {
-    res.status(500).json({ error: ' Internal server error. ' });
-  }
-};
